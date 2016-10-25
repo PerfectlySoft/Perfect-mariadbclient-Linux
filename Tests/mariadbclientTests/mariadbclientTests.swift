@@ -12,7 +12,7 @@ class mariadbclientTests: XCTestCase {
       var ptr: UnsafeMutablePointer<MYSQL>?
       ptr = mysql_init(nil)
       XCTAssertNotEqual(ptr, nil)
-      let check = mysql_real_connect(ptr!, "localhost", "root", "123", "test", 3306, "/var/run/mysqld/mysqld.sock", 0)
+      let check = mysql_real_connect(ptr!, "127.0.0.1", "root", "123", "test", 3306, "/tmp/mysqld.sock", 0)
       XCTAssertEqual(check, ptr)
     }
 
